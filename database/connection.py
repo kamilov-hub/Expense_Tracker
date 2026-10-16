@@ -1,0 +1,12 @@
+import psycopg2
+from config import settings
+
+def get_connection():
+    conn = psycopg2.connect(
+        dbname=settings.db_name,
+        user=settings.db_user,
+        password=settings.db_password,
+        host=settings.db_host,
+        port=settings.db_port
+    )
+    return conn
